@@ -9,10 +9,10 @@
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:9091/.well-known/openai.yaml",
+        "url": "https://gptdraw.pages.dev/.well-known/openai.yaml",
         "is_user_authenticated": false
     },
-    "logo_url": "http://localhost:9091/logo.png",
+    "logo_url": "https://gptdraw.pages.dev/logo.png",
     "contact_email": "evanhaveman@gmail.com",
-    "legal_info_url": "http://localhost:9091/legal"
+    "legal_info_url": "https://gptdraw.pages.dev/legal"
 }
