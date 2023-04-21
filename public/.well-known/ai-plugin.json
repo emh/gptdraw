@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Draw",
+    "name_for_model": "SVG_Draw",
+    "description_for_human": "Plugin to display vector line drawings",
+    "description_for_model": "Plugin for drawing SVG images. Accepts SVG code and returns the URL to a page with the rendered image.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:9091/.well-known/openai.yaml",
+        "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:9091/logo.png",
+    "contact_email": "evanhaveman@gmail.com",
+    "legal_info_url": "http://localhost:9091/legal"
+}

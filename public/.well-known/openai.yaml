@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: SVG_Draw
+  description: Drawing tool that will display an SVG image.
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:9091'
+paths:
+  /draw:
+    get:
+      summary: Draw the SVG image
+      description: Creates a web page that will display the rendered SVG
+      operationId: draw
+      parameters:
+      - name: svg
+        in: query
+        description: SVG code
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The URL to the page with the image
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    description: The URL of the page.
