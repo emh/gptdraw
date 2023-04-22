@@ -9,15 +9,14 @@ paths:
   /draw:
     post:
       summary: Draw the SVG image
-      description: Creates a web page that will display the rendered SVG
+      description: Given a snippet of SVG code, returns the URL to a webpage that renders the image
       operationId: draw
-      requestBody:
-        required: true
-        content:
-          image/svg+xml:
-            schema:
-              type: string
-              format: binary
+      parameters:
+      - name: svg
+        in: query
+        description: the SVG code
+        schema:
+          type: string
       responses:
         '200':
           description: The URL to the page with the image
@@ -28,4 +27,4 @@ paths:
                 properties:
                   url:
                     type: string
-                    description: The URL of the page.
+                    description: The URL of the page with the rendered image.

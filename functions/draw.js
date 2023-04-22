@@ -1,7 +1,20 @@
+// export const onRequestOptions = async () => {
+//     return new Response(null, {
+//         status: 204,
+//         headers: {
+//             'Access-Control-Allow-Origin': '*',
+//             'Access-Control-Allow-Headers': '*',
+//             'Access-Control-Allow-Methods': 'GET, OPTIONS',
+//             'Access-Control-Max-Age': '86400',
+//         }
+//     });
+// };
+
 export async function onRequest(context) {
     console.log('draw');
     const request = context.request;
-    const svg = await request.text();
+    const { searchParams } = new URL(request.url);
+    const svg = searchParams.get('svg');
     const uuid = self.crypto.randomUUID();
 
     console.log(uuid, svg);
