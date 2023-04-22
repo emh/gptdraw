@@ -7,17 +7,17 @@ servers:
   - url: 'https://gptdraw.pages.dev'
 paths:
   /draw:
-    get:
+    post:
       summary: Draw the SVG image
       description: Creates a web page that will display the rendered SVG
       operationId: draw
-      parameters:
-      - name: svg
-        in: query
-        description: SVG code
+      requestBody:
         required: true
-        schema:
-          type: string
+        content:
+          image/svg+xml:
+            schema:
+              type: string
+              format: binary
       responses:
         '200':
           description: The URL to the page with the image

@@ -1,9 +1,10 @@
 export async function onRequest(context) {
     console.log('draw');
     const request = context.request;
-    const body = await request.json();
-    const svg = body.svg;
+    const svg = await request.text();
     const uuid = self.crypto.randomUUID();
+
+    console.log(uuid, svg);
 
     await context.env.IMAGES.put(uuid, svg);
 
